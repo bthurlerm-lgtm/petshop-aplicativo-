@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#173f35" />
+  <title>PetShop Pro</title>
+  <link rel="stylesheet" href="./src/styles.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">PETSHOP PRO</p>
+        <h1>Dinheiro para trás</h1>
+      </div>
+      <span class="pill">Fundador</span>
+    </header>
+
+    <section class="hero card">
+      <p>Oportunidade identificada</p>
+      <strong id="opportunityTotal">R$ 0</strong>
+      <span>estimativa com base nas oportunidades atuais</span>
+    </section>
+
+    <section class="section">
+      <div class="section-head"><h2>Ações de hoje</h2><span class="badge" id="confidenceBadge">confiança —</span></div>
+      <div id="opportunityList" class="stack"></div>
+    </section>
+
+    <section class="section">
+      <div class="section-head"><h2>Aumentar ticket</h2><span class="badge">P0</span></div>
+      <div class="growth-grid" id="growthList"></div>
+    </section>
+
+    <section class="card result-card">
+      <div><p>Recuperado pelo PetShop Pro</p><strong id="recoveredTotal">R$ 0</strong></div>
+      <span>este mês</span>
+    </section>
+
+    <nav class="bottom-nav" aria-label="Navegação principal">
+      <button class="active">Início</button><button>Agenda</button><button>Clientes</button><button>Vendas</button>
+    </nav>
+  </main>
+  <script type="module" src="./src/app.js"></script>
+</body>
+</html>
