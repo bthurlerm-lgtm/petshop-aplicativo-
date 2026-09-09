@@ -2,7 +2,7 @@
 
 [PET-008]
 STATUS:
-IN_PROGRESS
+HUMAN_ACTION
 
 DONE:
 - Landing comercial completa para os 50 Pet Shops Fundadores por R$ 69,90/mês.
@@ -34,12 +34,14 @@ FILES_CHANGED:
 TESTS:
 - `node --check src/landing.js`: PASS
 - `node --check src/app.js`: PASS
+- páginas e ativos servidos localmente via HTTP: PASS (200)
 - arquivos internos referenciados: PASS
 - 4 CTAs `wa.me/5538999200021`: PASS
 - mensagem dos 50 Fundadores: PASS
 - HTML base + viewport: PASS
 - busca de segredos no frontend: PASS
-- validação visual em URL HTTPS: PENDING após publicação
+- tentativa em `https://bthurlerm-lgtm.github.io/petshop-aplicativo-/landing.html`: 404 (Pages desabilitado)
+- validação visual em URL HTTPS: BLOCKED até ativação do Pages
 
 DECISIONS:
 - Manter arquitetura static-first para validação comercial.
@@ -53,7 +55,8 @@ RISKS:
 - Ainda não existe cobrança Mercado Pago configurada nem cliente real pago.
 
 NEXT:
-- Publicar e validar a URL HTTPS em celular.
+- Habilitar GitHub Pages com fonte GitHub Actions.
+- Aguardar o workflow `Deploy PetShop Pro` e validar a URL HTTPS em celular.
 - Ativar coleta analytics na hospedagem.
 - Criar link de pagamento Mercado Pago do plano Fundador.
 - Executar primeiro diagnóstico e fechar o primeiro cliente real.
@@ -65,3 +68,6 @@ CONTEXT_TO_READ:
 - docs/CURRENT_STATE.md
 - landing.html
 - .github/workflows/pages.yml
+
+HUMAN_ACTION:
+- GitHub → `bthurlerm-lgtm/petshop-aplicativo-` → Settings → Pages → Build and deployment → Source: GitHub Actions.
