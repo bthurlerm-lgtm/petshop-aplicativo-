@@ -1,0 +1,14 @@
+# Nunca publique credenciais ou dados locais
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+service-account*.json
+credentials*.json
+secrets*.json
+node_modules/
+.DS_Store
