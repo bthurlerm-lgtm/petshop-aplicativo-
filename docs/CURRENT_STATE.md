@@ -13,6 +13,8 @@ DONE:
 - FAQ, aviso de privacidade, termos básicos, favicon, Open Graph e página 404.
 - Eventos de conversão instrumentados em `window.dataLayer` e evento `petshoppro:analytics`.
 - Workflow de GitHub Pages preparado.
+- Proteção de navegador aplicada: CSP, política de referenciador e bloqueio de conexões externas não necessárias.
+- `.gitignore` preventivo e `SECURITY.md` adicionados para evitar credenciais e dados reais no repositório público.
 
 FILES_CHANGED:
 - landing.html
@@ -44,6 +46,7 @@ TESTS:
 - novo push disparado para publicar a versão comercial.
 - landing pública HTTPS: PASS — https://bthurlerm-lgtm.github.io/petshop-aplicativo-/landing.html
 - landing renderizada e CTAs/links essenciais validados: PASS
+- endurecimento pós-publicação: PASS — landing e demo continuam funcionais
 
 DECISIONS:
 - Manter arquitetura static-first para validação comercial.
@@ -52,6 +55,7 @@ DECISIONS:
 - Pagamento inicial será link/Pix do Mercado Pago enviado após qualificação, sem segredo no frontend.
 
 RISKS:
+- Configurações de proteção de ramo exigem ajuste manual do proprietário no GitHub; não há acesso programático a essa configuração nesta sessão.
 - GitHub Pages pode exigir ativação manual porque o repositório é privado.
 - Termos e privacidade são bases operacionais e precisam de validação jurídica antes da escala.
 - Ainda não existe cobrança Mercado Pago configurada nem cliente real pago.
