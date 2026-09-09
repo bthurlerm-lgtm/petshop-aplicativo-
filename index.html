@@ -1,45 +1,25 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="theme-color" content="#173f35" />
-  <title>PetShop Pro</title>
-  <link rel="stylesheet" href="./src/styles.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#123d32">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Demo — PetShop Pro</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./src/styles.css">
 </head>
 <body>
+  <div class="demo-ribbon">DADOS DE DEMONSTRAÇÃO · NÃO SÃO RESULTADOS REAIS <a href="./landing.html">Conhecer o plano Fundador</a></div>
   <main class="app-shell">
-    <header class="topbar">
-      <div>
-        <p class="eyebrow">PETSHOP PRO</p>
-        <h1>Dinheiro para trás</h1>
-      </div>
-      <span class="pill">Fundador</span>
-    </header>
-
-    <section class="hero card">
-      <p>Oportunidade identificada</p>
-      <strong id="opportunityTotal">R$ 0</strong>
-      <span>estimativa com base nas oportunidades atuais</span>
-    </section>
-
-    <section class="section">
-      <div class="section-head"><h2>Ações de hoje</h2><span class="badge" id="confidenceBadge">confiança —</span></div>
-      <div id="opportunityList" class="stack"></div>
-    </section>
-
-    <section class="section">
-      <div class="section-head"><h2>Aumentar ticket</h2><span class="badge">P0</span></div>
-      <div class="growth-grid" id="growthList"></div>
-    </section>
-
-    <section class="card result-card">
-      <div><p>Recuperado pelo PetShop Pro</p><strong id="recoveredTotal">R$ 0</strong></div>
-      <span>este mês</span>
-    </section>
-
+    <header class="topbar"><div><p class="eyebrow">PETSHOP PRO</p><h1 id="screenTitle">Dinheiro para trás</h1></div><button class="avatar" aria-label="Perfil da loja">AP</button></header>
+    <div id="appContent" aria-live="polite"></div>
     <nav class="bottom-nav" aria-label="Navegação principal">
-      <button class="active">Início</button><button>Agenda</button><button>Clientes</button><button>Vendas</button>
+      <button data-screen="home" class="active"><span>⌂</span>Início</button>
+      <button data-screen="agenda"><span>◫</span>Agenda</button>
+      <button data-screen="clientes"><span>♙</span>Clientes</button>
+      <button data-screen="vendas"><span>◇</span>Vendas</button>
+      <button data-screen="crm"><span>◎</span>CRM</button>
     </nav>
   </main>
   <script type="module" src="./src/app.js"></script>

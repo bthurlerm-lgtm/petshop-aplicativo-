@@ -1,33 +1,67 @@
 # CURRENT STATE — PETSHOP PRO
 
-## Status atual
-Execução iniciada no repositório oficial.
+[PET-008]
+STATUS:
+IN_PROGRESS
 
-## Implementado
-- Home mobile-first “Dinheiro para Trás”.
-- Design System inicial verde/creme/laranja.
-- Cards de oportunidades: recompra, agenda ociosa, clientes sumidos e cross-sell.
-- Bloco de aumento de ticket: produtos, combos, plano mensal, plano trimestral, níveis/fidelidade e prioridade de agenda.
-- REVENUE_ENGINE.md com regras, eventos e KPIs.
+DONE:
+- Landing comercial completa para os 50 Pet Shops Fundadores por R$ 69,90/mês.
+- Mensagem “Dinheiro para Trás” com distinção explícita entre valor identificado, recuperado e margem.
+- Demo visual e demonstração navegável com Home, Agenda, Tutor/Pet 360, Produtos, Combos, Planos, Fidelidade e CRM.
+- Todos os números simulados marcados como DEMONSTRAÇÃO.
+- Quatro CTAs de WhatsApp com origem e campanha identificáveis.
+- FAQ, aviso de privacidade, termos básicos, favicon, Open Graph e página 404.
+- Eventos de conversão instrumentados em `window.dataLayer` e evento `petshoppro:analytics`.
+- Workflow de GitHub Pages preparado.
 
-## Decisão central
-O PetShop Pro não começa como ERP completo. O wedge é identificar dinheiro perdido, recomendar a próxima melhor ação e medir resultado real.
+FILES_CHANGED:
+- landing.html
+- index.html
+- src/landing.css
+- src/landing.js
+- src/styles.css
+- src/app.js
+- privacidade.html
+- termos.html
+- 404.html
+- favicon.svg
+- og-petshop-pro.svg
+- robots.txt
+- .nojekyll
+- .github/workflows/pages.yml
+- docs/CURRENT_STATE.md
 
-## Novos requisitos aprovados
-1. Venda de produtos.
-2. Cross-sell e upsell.
-3. Combos.
-4. Pacote/plano mensal.
-5. Pacote/plano trimestral.
-6. Sistema de níveis/fidelidade.
-7. Preferência no agendamento para clientes elegíveis.
-8. Todos conectados a ticket médio, margem, recorrência, LTV e atribuição de receita.
+TESTS:
+- `node --check src/landing.js`: PASS
+- `node --check src/app.js`: PASS
+- arquivos internos referenciados: PASS
+- 4 CTAs `wa.me/5538999200021`: PASS
+- mensagem dos 50 Fundadores: PASS
+- HTML base + viewport: PASS
+- busca de segredos no frontend: PASS
+- validação visual em URL HTTPS: PENDING após publicação
 
-## Próxima execução
-PET-005: modelo de dados multi-tenant.
-PET-006: motor de oportunidades e recomendação.
-PET-007: eventos + ROI + atribuição.
-PET-008: landing dos 50 Fundadores a R$69,90/mês.
+DECISIONS:
+- Manter arquitetura static-first para validação comercial.
+- GitHub Pages preparado como rota econômica imediata; Cloudflare Pages continua preferível quando conectado.
+- Analytics de conversão instrumentado sem fornecedor até a hospedagem definir coleta.
+- Pagamento inicial será link/Pix do Mercado Pago enviado após qualificação, sem segredo no frontend.
 
-## Human gate
-Nenhum neste momento.
+RISKS:
+- GitHub Pages pode exigir ativação manual porque o repositório é privado.
+- Termos e privacidade são bases operacionais e precisam de validação jurídica antes da escala.
+- Ainda não existe cobrança Mercado Pago configurada nem cliente real pago.
+
+NEXT:
+- Publicar e validar a URL HTTPS em celular.
+- Ativar coleta analytics na hospedagem.
+- Criar link de pagamento Mercado Pago do plano Fundador.
+- Executar primeiro diagnóstico e fechar o primeiro cliente real.
+
+NEXT_AGENT:
+EXECUTOR PRINCIPAL PETSHOP PRO
+
+CONTEXT_TO_READ:
+- docs/CURRENT_STATE.md
+- landing.html
+- .github/workflows/pages.yml
