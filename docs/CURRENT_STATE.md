@@ -1,5 +1,20 @@
 # CURRENT STATE — PETSHOP PRO
 
+[SALES-001]
+STATUS:
+BLOCKED
+DONE:
+- Produto, demo, oferta Fundador e onboarding verificados.
+- Primeiro lote de 3 pet shops locais com perfil ICP pesquisado em fontes públicas.
+- Copy de abordagem aprovada pelo playbook: curta, sem promessa de resultado e com CTA de demonstração.
+BLOCKED:
+- Conector de envio WhatsApp desta conta retornou: AI connector not enabled. Nenhuma mensagem foi enviada.
+NEXT:
+- Habilitar o conector comercial já usado nos demais apps ou conectar o remetente autorizado.
+- Enviar lote inicial de até 3 abordagens personalizadas.
+- Registrar resposta, objeção e próxima ação.
+
+
 [PET-009]
 STATUS:
 IN_PROGRESS
