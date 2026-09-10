@@ -1,20 +1,22 @@
 # CURRENT STATE — PETSHOP PRO
 
-[PET-008]
+[PET-009]
 STATUS:
-DONE
+IN_PROGRESS
 
 DONE:
 - Landing comercial completa para os 50 Pet Shops Fundadores por R$ 69,90/mês.
 - Mensagem “Dinheiro para Trás” com distinção explícita entre valor identificado, recuperado e margem.
 - Demo visual e demonstração navegável com Home, Agenda, Tutor/Pet 360, Produtos, Combos, Planos, Fidelidade e CRM.
 - Todos os números simulados marcados como DEMONSTRAÇÃO.
-- Quatro CTAs de WhatsApp com origem e campanha identificáveis.
+- CTAs de WhatsApp conectados ao canal comercial Jarvis: +55 38 99920-0021.
 - FAQ, aviso de privacidade, termos básicos, favicon, Open Graph e página 404.
 - Eventos de conversão instrumentados em `window.dataLayer` e evento `petshoppro:analytics`.
-- Workflow de GitHub Pages preparado.
+- Workflow de GitHub Pages preparado e landing pública publicada.
 - Proteção de navegador aplicada: CSP, política de referenciador e bloqueio de conexões externas não necessárias.
 - `.gitignore` preventivo e `SECURITY.md` adicionados para evitar credenciais e dados reais no repositório público.
+- Novo onboarding de Fundador em `onboarding.html`, sem backend e sem armazenamento próprio nesta fase; coleta somente o essencial e envia o diagnóstico montado ao WhatsApp autorizado.
+- Playbook de primeira venda criado em `docs/FIRST_SALE_PLAYBOOK.md` com ICP, abordagem, objeções, fechamento, funil e critérios de venda real.
 
 FILES_CHANGED:
 - landing.html
@@ -23,6 +25,7 @@ FILES_CHANGED:
 - src/landing.js
 - src/styles.css
 - src/app.js
+- onboarding.html
 - privacidade.html
 - termos.html
 - 404.html
@@ -31,6 +34,7 @@ FILES_CHANGED:
 - robots.txt
 - .nojekyll
 - .github/workflows/pages.yml
+- docs/FIRST_SALE_PLAYBOOK.md
 - docs/CURRENT_STATE.md
 
 TESTS:
@@ -38,39 +42,43 @@ TESTS:
 - `node --check src/app.js`: PASS
 - páginas e ativos servidos localmente via HTTP: PASS (200)
 - arquivos internos referenciados: PASS
-- 4 CTAs `wa.me/5538999200021`: PASS
+- CTAs `wa.me/5538999200021`: PASS
 - mensagem dos 50 Fundadores: PASS
 - HTML base + viewport: PASS
 - busca de segredos no frontend: PASS
 - GitHub Pages habilitado com fonte GitHub Actions.
-- novo push disparado para publicar a versão comercial.
 - landing pública HTTPS: PASS — https://bthurlerm-lgtm.github.io/petshop-aplicativo-/landing.html
 - landing renderizada e CTAs/links essenciais validados: PASS
-- endurecimento pós-publicação: PASS — landing e demo continuam funcionais
+- endurecimento pós-publicação: PASS
+- onboarding criado e commitado; publicação depende do ciclo do GitHub Pages após o novo push.
 
 DECISIONS:
 - Manter arquitetura static-first para validação comercial.
-- GitHub Pages preparado como rota econômica imediata; Cloudflare Pages continua preferível quando conectado.
-- Analytics de conversão instrumentado sem fornecedor até a hospedagem definir coleta.
-- Pagamento inicial será link/Pix do Mercado Pago enviado após qualificação, sem segredo no frontend.
+- Não bloquear a primeira venda por cobrança SaaS complexa.
+- Pagamento inicial pode ser Pix/link de pagamento enviado após qualificação.
+- Mercado Pago continua sendo a preferência brasileira para checkout recorrente futuro.
+- O funil comercial oficial passa a ser: LEAD -> QUALIFIED -> DEMO -> INTERESTED -> PAYMENT_SENT -> PAID -> ONBOARDING -> ACTIVE.
+- Só considerar venda quando existir cliente real + pagamento confirmado.
 
 RISKS:
-- Configurações de proteção de ramo exigem ajuste manual do proprietário no GitHub; não há acesso programático a essa configuração nesta sessão.
-- GitHub Pages pode exigir ativação manual porque o repositório é privado.
+- Ainda não existe cobrança Mercado Pago integrada ou link de pagamento oficial configurado.
 - Termos e privacidade são bases operacionais e precisam de validação jurídica antes da escala.
-- Ainda não existe cobrança Mercado Pago configurada nem cliente real pago.
+- Analytics possui eventos locais, mas ainda não há fornecedor externo de coleta configurado.
+- A publicação do novo `onboarding.html` precisa concluir o ciclo automático do GitHub Pages.
 
 NEXT:
-- Criar link de pagamento Mercado Pago do plano Fundador.
-- Fazer o diagnóstico de entrada com o primeiro pet shop interessado.
-- Ativar coleta analytics na hospedagem.
-- Criar link de pagamento Mercado Pago do plano Fundador.
-- Executar primeiro diagnóstico e fechar o primeiro cliente real.
+- Confirmar publicação do onboarding.
+- Criar/obter link de pagamento Mercado Pago ou usar Pix no primeiro fechamento.
+- Iniciar prospecção real com o playbook.
+- Registrar primeiro lead qualificado.
+- Enviar proposta e cobrança.
+- Após PAID, enviar onboarding e executar diagnóstico inicial.
 
 NEXT_AGENT:
-EXECUTOR PRINCIPAL PETSHOP PRO
+AGENTE DE VENDAS PETSHOP PRO
 
 CONTEXT_TO_READ:
 - docs/CURRENT_STATE.md
+- docs/FIRST_SALE_PLAYBOOK.md
 - landing.html
-- .github/workflows/pages.yml
+- onboarding.html
