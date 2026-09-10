@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#173f35" />
+  <title>PetShop Pro — Entrada Fundador</title>
+  <link rel="stylesheet" href="./src/landing.css" />
+</head>
+<body>
+<main>
+  <section class="hero">
+    <span class="tag">PET SHOP FUNDADOR</span>
+    <h1>Vamos preparar seu PetShop Pro.</h1>
+    <p>Responda só o essencial. No final, o WhatsApp abre com o diagnóstico inicial pronto para seguirmos.</p>
+  </section>
+
+  <section class="lead">
+    <form id="onboardingForm">
+      <label>Nome do pet shop<br><input required name="store" autocomplete="organization"></label><br><br>
+      <label>Seu nome<br><input required name="owner" autocomplete="name"></label><br><br>
+      <label>Cidade<br><input required name="city" autocomplete="address-level2"></label><br><br>
+      <label>WhatsApp<br><input required name="phone" inputmode="tel" autocomplete="tel"></label><br><br>
+      <label>O pet shop tem banho e tosa?<br>
+        <select required name="grooming"><option value="">Selecione</option><option>Sim</option><option>Não</option></select>
+      </label><br><br>
+      <label>Vende produtos?<br>
+        <select required name="products"><option value="">Selecione</option><option>Sim</option><option>Não</option></select>
+      </label><br><br>
+      <label>Hoje você controla clientes/agendamentos em quê?<br>
+        <select required name="system"><option value="">Selecione</option><option>WhatsApp/caderno</option><option>Planilha</option><option>Outro sistema</option><option>Ainda não controlo bem</option></select>
+      </label><br><br>
+      <label>Qual é a maior dificuldade hoje?<br><textarea required name="pain" rows="4" placeholder="Ex.: clientes somem, agenda vazia, não sei quem deveria voltar..."></textarea></label><br><br>
+      <button class="cta" type="submit">Enviar diagnóstico pelo WhatsApp</button>
+      <p class="micro">Nenhuma resposta é enviada para servidor próprio nesta versão. O formulário apenas monta sua mensagem e abre o WhatsApp.</p>
+    </form>
+  </section>
+</main>
+<script>
+const form = document.querySelector('#onboardingForm');
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const data = new FormData(form);
+  const message = [
+    'Olá! Quero iniciar meu PetShop Pro como Fundador.',
+    '',
+    `Pet shop: ${data.get('store')}`,
+    `Responsável: ${data.get('owner')}`,
+    `Cidade: ${data.get('city')}`,
+    `WhatsApp: ${data.get('phone')}`,
+    `Banho e tosa: ${data.get('grooming')}`,
+    `Venda de produtos: ${data.get('products')}`,
+    `Controle atual: ${data.get('system')}`,
+    `Maior dificuldade: ${data.get('pain')}`,
+    '',
+    'Campanha: 50 Pet Shops Fundadores — R$ 69,90/mês.'
+  ].join('\n');
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({event:'founder_onboarding_started', source:'onboarding'});
+  window.open(`https://wa.me/5538999200021?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer');
+});
+</script>
+</body>
+</html>
